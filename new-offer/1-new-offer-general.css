@@ -1,0 +1,149 @@
+/* =======================================================================
+SIDE BAR
+========================================================================== */
+
+.aside-buttons {
+    gap: .75rem;
+}
+
+.button-save {
+    background-color: var(--clr-accent-300);
+    width: fit-content;
+    padding: .6rem .9rem;
+    gap: .5rem;
+    border-radius: 5px;
+}
+
+.button-exit {
+    background-color: var(--clr-primary-300);
+    width: fit-content;
+    padding: .6rem .9rem;
+    gap: .5rem;
+    border-radius: 5px;
+}
+
+.button-save svg,
+.button-exit svg {
+    color: var(--clr-primary-900);
+}
+
+.button-save:hover,
+.button-exit:hover {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+/* =======================================================================
+CONTENT
+========================================================================== */
+
+.content-new-offer {
+    padding: 3rem 8rem;
+    gap: 1rem;
+}
+
+/* =======================================================================
+PROGRESS BAR
+========================================================================== */
+
+.progress-bar {
+    gap: 1rem;
+    padding: 1.5rem 0;
+}
+
+.progress-bar .selected {
+    background-color: var(--clr-primary-100);
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+}
+
+.progress-bar .not-selected {
+    background-color: #fff;
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    border: 1px solid var(--clr-primary-900);
+}
+
+.progress-bar .not-selected:hover {
+    background-color: var(--clr-primary-100);
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    border: 1px solid var(--clr-primary-900);
+}
+
+.progress-divider {
+    height: 0;
+    width: 5rem;
+    border-bottom: 1.5px solid var(--clr-primary-900);
+    flex-grow: 1;
+}
+
+/* =======================================================================
+INPUT AREA
+========================================================================== */
+.general-information,
+.contact-person {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.text-inputfield textarea {
+    background-color: var(--clr-primary-50);
+    border: none;
+    border-radius: 16px;
+}
+
+.textarea-container {
+    grid-column: span 2;
+    grid-row: 4;
+}
+
+.text-inputfield input {
+    background-color: var(--clr-primary-50);
+    border: none;
+    border-radius: 16px;
+    padding: .5rem;
+}
+
+.text-inputfield input:focus,
+.text-inputfield textarea:focus {
+    background-color: var(--clr-primary-50);
+    border: 1px var(--clr-primary-300) solid;
+    outline: var(--clr-primary-900);
+    border-radius: 16px;
+    padding: .5rem;
+}
+
+/* .text-inputfield input:focus { 
+    outline: var(--clr-primary-900);
+}
+
+.text-inputfield textarea:focus { 
+    outline: var(--clr-primary-900);
+} */
+
+.text-inputfield {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem
+}
+
+.button-next {
+    background-color: var(--clr-primary-300);
+    width: fit-content;
+    padding: .6rem .9rem;
+    gap: .5rem;
+    border-radius: 5px;
+    align-self: end;
+}
+
+.button-next svg {
+    color: var(--clr-primary-900);
+}
+
+.button-next:hover {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}

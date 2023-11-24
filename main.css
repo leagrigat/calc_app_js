@@ -1,0 +1,252 @@
+/* *, root, reset css und alles, was auf mehreren pages verwendet wird - header, side bar, footer 
+color var festlegen */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font: inherit;
+}
+
+:root {
+
+/* COLORS */
+/* BLUE */
+--clr-primary-50: #ECF3FF;
+--clr-primary-100: #C5DBFF;
+--clr-primary-200: #A9C9FF;
+--clr-primary-300: #82B1FF;
+--clr-primary-400: #69A1FF;
+--clr-primary-600: #3E7EE8;
+--clr-primary-900: #1D3A6B;
+
+/* GREEN */
+--clr-accent-100: #D1FAE6;
+--clr-accent-200: #C3FFA7;
+--clr-accent-300: #9BF5C9;
+
+/* PURPLE */
+--clr-accent2: #D3CCFF;
+
+/* NEUTRAL */
+--clr-neutral: #FFFEFE;
+--clr-neutral-500: #DCDCDC;
+
+/* FONT SIZES */
+--fs-400: .875rem;
+--fs-500: 1rem;
+--fs-600: 1.375rem;
+--fs-800: 2rem;
+--fs-900: 2.5rem;
+
+/* FONT WEIGHTS */
+--fw-regular: 400;
+--fw-semibold: 500;
+--fw-bold: 700;
+
+}
+
+html,
+body {
+  min-height: 100vh;
+  font-family: 'Noto Sans', sans-serif;
+  color: var(--clr-primary-900);
+}
+
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+main {
+    width: 100%;
+    min-height: 100vh;
+    overflow: scroll;
+}
+
+.content {
+    padding: 0 5rem 0 1rem;
+    gap: 2rem;
+}
+
+/* =======================================================================
+GRID
+========================================================================== */
+.site-grid {
+    display: grid;
+    grid-template-areas: 
+    "aside content"
+    "footer footer";
+    grid-template-rows: auto;
+    grid-template-columns: min-content auto;
+
+}
+
+aside {
+    grid-area: aside;
+    padding-bottom: 2rem;
+}
+
+.wrapper-header-content {
+    grid-area: content;
+}
+
+footer {
+    grid-area: footer;
+}
+
+/* =======================================================================
+HEADER
+========================================================================== */
+
+header {
+    width: 100%;
+    padding: 2rem 2rem 0 0;
+    gap: 1rem;
+}
+
+.header-icon {
+    background-color: var(--clr-primary-200);
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.header-text {
+    gap: 1rem;
+}
+
+/* =======================================================================
+NAV BAR
+========================================================================== */
+nav {
+    display: none;
+}
+/* wir können hier eine nav bar bauen, die im normalen screen nicht gezeigt wird und erst
+ab einer bestimmten screengröße erscheint */
+
+/* =======================================================================
+SIDE BAR
+========================================================================== */
+.main-nav {
+    min-width: 200px;
+    background-color: var(--clr-primary-50);
+}
+
+.brand {
+    padding: 2rem 0 4rem;
+}
+
+.brand-icon {
+    background-color: var(--clr-accent-100);
+    width: fit-content;
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.navigation-items {
+    gap: 2.3rem;
+}
+
+.navigation-items a {
+    display: flex;
+    gap: 0.3rem;
+    align-items: center;
+}
+
+.navigation-items a.active {
+    color: var(--clr-primary-600);
+}
+
+.navigation-items li a:hover:not(.active) {
+    color: var(--clr-primary-300);
+}
+
+/* =======================================================================
+FOOTER
+========================================================================== */
+footer {
+    background-color: var(--clr-primary-400);
+    width: 100%;
+    min-height: 80px;
+    padding: 0 6rem 0 .5rem;
+}
+
+footer .address, .footer-info {
+    gap: 1rem;
+}
+
+footer .footer-text {
+    padding: 3rem 0 5rem 0;
+    gap: 5rem;
+}
+
+footer a {
+    gap: .3rem;
+    align-items: center;
+}
+
+footer svg {
+    color: var(--clr-primary-900);
+}
+
+/* =======================================================================
+MEDIA QUERIES
+========================================================================== */
+
+@media screen and (max-width: 576px) {
+    .logo {
+        width: 45px;
+        height: 45px;
+    }
+
+    header .header-text {
+        display: none !important;
+    }
+
+    .navigation-items {
+        gap: .5rem;
+    }
+
+    aside {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 825px) {
+    /* .site-grid {
+        grid-template-areas: 
+        "aside"
+        "content"
+        "footer";
+    } 
+    Wenn ich das so schreibe, müsste ich die komplette aside
+    mit den main items umschreiben*/
+    
+    .navigation-items span {
+        display: none;
+    }
+
+    footer {
+        justify-content: center;
+        padding: 0 .5rem;
+    }
+
+    footer .footer-text {
+        justify-content: center;
+    }
+}

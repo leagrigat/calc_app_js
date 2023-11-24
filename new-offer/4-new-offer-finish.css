@@ -1,0 +1,124 @@
+/* =======================================================================
+SIDE BAR
+========================================================================== */
+
+.aside-buttons {
+    gap: .75rem;
+}
+
+.button-save {
+    background-color: var(--clr-accent-300);
+    width: fit-content;
+    padding: .6rem .9rem;
+    gap: .5rem;
+    border-radius: 5px;
+}
+
+.button-exit {
+    background-color: var(--clr-primary-300);
+    width: fit-content;
+    padding: .6rem .9rem;
+    gap: .5rem;
+    border-radius: 5px;
+}
+
+.button-save svg,
+.button-exit svg {
+    color: var(--clr-primary-900);
+}
+
+.button-save:hover,
+.button-exit:hover {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+/* =======================================================================
+CONTENT
+========================================================================== */
+
+.content-finish {
+    padding: 3rem 8rem;
+    gap: 1rem;
+}
+
+/* =======================================================================
+PROGRESS BAR
+========================================================================== */
+
+.progress-bar {
+    gap: 1rem;
+    padding: 1.5rem 0;
+}
+
+.progress-bar .selected {
+    background-color: var(--clr-primary-100);
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+}
+
+.progress-bar .not-selected {
+    background-color: #fff;
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    border: 1px solid var(--clr-primary-900);
+}
+
+.progress-bar .not-selected:hover {
+    background-color: var(--clr-primary-100);
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    border: 1px solid var(--clr-primary-900);
+}
+
+.progress-divider {
+    height: 0;
+    width: 5rem;
+    border-bottom: 1.5px solid var(--clr-primary-900);
+    flex-grow: 1;
+}
+
+/* =======================================================================
+CONTENT DOWNLOAD
+========================================================================== */
+
+.content-download {
+    gap: 1.5rem;
+    max-width: 75%;
+}
+
+.button-download {
+    background-color: var(--clr-accent-100);
+    width: fit-content;
+    padding: .3rem .5rem;
+    gap: .5rem;
+    border-radius: 5px;
+}
+
+.button-download svg {
+    color: var(--clr-primary-900);
+}
+
+.checkbox-send-client {
+    gap: 1rem;
+}
+
+.button-finish {
+    background-color: var(--clr-primary-300);
+    width: fit-content;
+    padding: .6rem .9rem;
+    gap: .5rem;
+    border-radius: 5px;
+    align-self: end;
+}
+
+.button-finish svg {
+    color: var(--clr-primary-900);
+}
+
+.button-download:hover,
+.button-finish:hover {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}

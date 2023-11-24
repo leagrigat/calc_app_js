@@ -1,0 +1,137 @@
+/* for flexbox, settings for different parts with several attributes */
+
+/* FONTS */
+
+.regular-xs {
+    /* .875rem */
+    font-size: var(--fs-400);
+    font-weight: var(--fw-regular);
+    color: var(--clr-primary-900);
+}
+
+.regular-s {
+    /* 1rem */
+    font-size: var(--fs-500);
+    font-weight: var(--fw-regular);
+    color: var(--clr-primary-900);
+}
+
+.bold-s {
+    /* 1rem */
+    font-size: var(--fs-500);
+    font-weight: var(--fw-bold);
+    color: var(--clr-primary-900);
+}
+
+.semibold-s {
+    /* 1rem */
+    font-size: var(--fs-500);
+    font-weight: var(--fw-semibold);
+    color: var(--clr-primary-900);
+}
+
+.regular-m {
+    /* 1.375rem */
+    font-size: var(--fs-600);
+    font-weight: var(--fw-regular);
+    color: var(--clr-primary-900);
+}
+
+.bold-m {
+    /* 1.375rem */
+    font-size: var(--fs-600);
+    font-weight: var(--fw-bold);
+    color: var(--clr-primary-900);
+}
+
+.bold-l {
+    font-size: var(--fs-800);
+    font-weight: var(--fw-bold);
+    color: var(--clr-primary-900);
+}
+
+.semibold-l {
+    font-size: var(--fs-800);
+    font-weight: var(--fw-semibold);
+    color: var(--clr-primary-900);
+}
+
+/* FLEXBOX */
+
+.flex {
+    display: flex;
+}
+
+/* JUSTIFY CONTENT */
+
+.justify-start {
+    justify-content: start;
+}
+
+.justify-end {
+    justify-content: end;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-around {
+    justify-content: space-around;
+}
+
+.justify-evenly {
+    justify-content: space-evenly;
+}
+
+/* ALIGN ITEMS */
+
+.items-start {
+    align-items: start;
+}
+.items-end {
+    align-items: end;
+}
+.items-center {
+    align-items: center;
+}
+.items-baseline {
+    align-items: baseline;
+}
+.items-strech {
+    align-items: stretch;
+}
+
+/* FLEX DIRECTION */
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+/* WRAP */
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-nowrap {
+    flex-wrap: nowrap;
+}
+
+/* FLEX GROW */
+
+.flex-grow {
+    flex-grow: 1;
+}
+
+.flex-grow-0 {
+    flex-grow: 0;
+}
