@@ -36,8 +36,9 @@ SIDE BAR
 CONTENT
 ========================================================================== */
 
-.content-new-offer {
-    padding: 3rem 8rem;
+.content {
+    padding: 3rem 4rem;
+    margin: 3rem 8rem;
     gap: 1rem;
 }
 
@@ -145,5 +146,215 @@ INPUT AREA
 }
 
 .button-next:hover {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+/* =======================================================================
+ADD EMPLOYEES
+========================================================================== */
+
+.add-bar {
+    padding: 1rem 0;
+}
+
+.button-new {
+    background-color: var(--clr-accent-100);
+    width: fit-content;
+    padding: .3rem .5rem;
+    gap: .5rem;
+    border-radius: 5px;
+}
+
+.employees {
+    gap: 2rem;
+}
+
+.employees-info {
+    gap: 5rem;
+    background-color: var(--clr-primary-50);
+    border-radius: 10px;
+    padding: 1rem 2rem;
+}
+
+.remove-employee {
+    background-color: var(--clr-primary-100);
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    align-self: start;
+}
+
+.button-next {
+    background-color: var(--clr-primary-300);
+    width: fit-content;
+    padding: .6rem .9rem;
+    gap: .5rem;
+    border-radius: 5px;
+    align-self: end;
+}
+
+.button-next svg {
+    color: var(--clr-primary-900);
+}
+
+.button-next:hover,
+.employees-info:hover,
+.remove-employee:hover,
+.button-new:hover {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+
+.employees-info {
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.employees-info-selector {
+    padding-right: 4.6rem;
+}
+
+/* =======================================================================
+CALCULATION SETTINGS
+========================================================================== */
+.checkbox-import-fixed-costs,
+.checkbox-add-vat {
+    gap: 1rem;
+}
+
+/* input[type="checkbox"] {
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid currentColor;
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+} */
+
+.button-new {
+    background-color: var(--clr-accent-100);
+    width: fit-content;
+    padding: .3rem .5rem;
+    gap: .5rem;
+    border-radius: 5px;
+    align-self: end;
+}
+
+/* =======================================================================
+CALCULATION CHART
+========================================================================== */
+
+.table-content {
+    gap: 1rem;
+    text-align: center;
+}
+
+.table-head {
+    padding: 1rem 2rem;
+    width: 100%;
+}
+
+.employees-info, .fixed-costs {
+    background-color: var(--clr-primary-50);
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    width: 100%;
+}
+
+.employees-info, .table-head {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.fixed-costs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+}
+
+.costs-without-taxes, .vat, .total-costs {
+    width: calc(50% + 2rem);
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.costs-without-taxes {
+    background-color: var(--clr-primary-100);
+}
+
+.vat {
+    background-color: var(--clr-primary-50);
+}
+
+.total-costs {
+    background-color: var(--clr-primary-300);
+}
+
+.button-next {
+    background-color: var(--clr-primary-300);
+    width: fit-content;
+    padding: .6rem .9rem;
+    gap: .5rem;
+    border-radius: 5px;
+    align-self: end;
+}
+
+.button-next svg {
+    color: var(--clr-primary-900);
+}
+
+.button-next:hover,
+.employees-info:hover,
+.button-new:hover,
+.fixed-costs:hover,
+.costs-without-taxes:hover,
+.vat:hover,
+.total-costs:hover {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+/* =======================================================================
+CONTENT DOWNLOAD
+========================================================================== */
+
+.content-download {
+    gap: 1.5rem;
+    max-width: 75%;
+}
+
+.button-download {
+    background-color: var(--clr-accent-100);
+    width: fit-content;
+    padding: .3rem .5rem;
+    gap: .5rem;
+    border-radius: 5px;
+}
+
+.button-download svg {
+    color: var(--clr-primary-900);
+}
+
+.checkbox-send-client {
+    gap: 1rem;
+}
+
+.button-finish {
+    background-color: var(--clr-primary-300);
+    width: fit-content;
+    padding: .6rem .9rem;
+    gap: .5rem;
+    border-radius: 5px;
+    align-self: end;
+}
+
+.button-finish svg {
+    color: var(--clr-primary-900);
+}
+
+.button-download:hover,
+.button-finish:hover {
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }

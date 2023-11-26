@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/new-offer/1-new-offer-general.css" />
     <link rel="stylesheet" href="../main.css" />
     <link rel="stylesheet" href="../utilities.css" />
+    <script defer src="../projects.js"></script>
   </head>
   <body>
     <main class="site-grid">
@@ -324,60 +325,62 @@
             </div>
           </a>
         </header>
-        <div class="content-new-offer flex flex-grow flex-column justify-end">
-          <div class="progress-bar flex flex-wrap items-center">
-            <a href="/new-offer/1-new-offer-general.html" class="selected bold-m flex justify-center items-center">1</a>
-            <div class="progress-divider"></div>
-            <a href="/new-offer/2-new-offer-teaminfo.html" class="not-selected bold-m flex justify-center items-center">2</a>
-            <div class="progress-divider"></div>
-            <a href="/new-offer/3-new-offer-costcalc.html" class="not-selected bold-m flex justify-center items-center">3</a>
-            <div class="progress-divider"></div>
-            <a href="/new-offer/4-new-offer-finish.html" class="not-selected bold-m flex justify-center items-center">4</a>
-          </div>
-          <span class="bold-m">General Information</span>
-          <div class="general-information">
-            <div class="text-inputfield">
-              <span>Project Name</span>
-              <input name="project-name" id="pn" cols="40" rows="2"></input>
+        <!-- PROGRESS BAR -->
+        <div class="progress-bar flex flex-wrap items-center">
+          <button class="selected bold-m flex justify-center items-center navbtn" id="navBtn1">1</button>
+          <div class="progress-divider"></div>
+          <button class="not-selected bold-m flex justify-center items-center navbtn" id="navBtn2">2</button>
+          <div class="progress-divider"></div>
+          <button class="not-selected bold-m flex justify-center items-center navbtn" id="navBtn3">3</button>
+          <div class="progress-divider"></div>
+          <button class="not-selected bold-m flex justify-center items-center navbtn" id="navBtn4">4</button>
+        </div>
+        <div>
+          <!-- STEP 1 - GENERAL INFORMATION -->
+          <div class="content flex flex-grow flex-column justify-end display-block" id="step1">
+            <span class="bold-m">General Information</span>
+            <div class="general-information">
+              <div class="text-inputfield">
+                <span>Project Name</span>
+                <input name="project-name" id="pn" cols="40" rows="2"></input>
+              </div>
+              <div class="text-inputfield">
+                <span>Offer Number</span>
+                <input name="offer-number" id="on" cols="40" rows="2"></input>
+              </div>
+              <div class="text-inputfield">
+                <span>Client Name</span>
+                <input name="client-name" id="cln" cols="40" rows="2"></input>
+              </div>
             </div>
-            <div class="text-inputfield">
-              <span>Offer Number</span>
-              <input name="offer-number" id="on" cols="40" rows="2"></input>
+            <span class="bold-m">Contact Person</span>
+            <div class="contact-person">
+              <div class="text-inputfield">
+                <span>Name</span>
+                <input name="name" id="nm" cols="40" rows="2"></input>
+              </div>
+              <div class="text-inputfield">
+                <span>Email</span>
+                <input name="email" id="em" cols="40" rows="2"></input>
+              </div>
+              <div class="text-inputfield">
+                <span>Street</span>
+                <input name="street" id="str" cols="40" rows="2"></input>
+              </div>
+              <div class="text-inputfield">
+                <span>City</span>
+                <input name="city" id="ct" cols="40" rows="2"></input>
+              </div>
+              <div class="text-inputfield">
+                <span>Postal Code</span>
+                <input name="postal-code" id="po-co" cols="40" rows="2"></input>
+              </div>
+              <div class="text-inputfield textarea-container">
+                <span>Project Description</span>
+                <textarea name="project-description" id="pr-de" cols="50" rows="10"></textarea>
+              </div>
             </div>
-            <div class="text-inputfield">
-              <span>Client Name</span>
-              <input name="client-name" id="cln" cols="40" rows="2"></input>
-            </div>
-          </div>
-          <span class="bold-m">Contact Person</span>
-          <div class="contact-person">
-            <div class="text-inputfield">
-              <span>Name</span>
-              <input name="name" id="nm" cols="40" rows="2"></input>
-            </div>
-            <div class="text-inputfield">
-              <span>Email</span>
-              <input name="email" id="em" cols="40" rows="2"></input>
-            </div>
-            <div class="text-inputfield">
-              <span>Street</span>
-              <input name="street" id="str" cols="40" rows="2"></input>
-            </div>
-            <div class="text-inputfield">
-              <span>City</span>
-              <input name="city" id="ct" cols="40" rows="2"></input>
-            </div>
-            <div class="text-inputfield">
-              <span>Postal Code</span>
-              <input name="postal-code" id="po-co" cols="40" rows="2"></input>
-            </div>
-            <div class="text-inputfield textarea-container">
-              <span>Project Description</span>
-              <textarea name="project-description" id="pr-de" cols="50" rows="10"></textarea>
-            </div>
-          </div>
-          <a class="button-next flex items-center" href="/new-offer/2-new-offer-teaminfo.html">
-            Next
+            <button class="button-next flex items-center" id="nextBtn1">Next
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
               <g clip-path="url(#clip0_88_400)">
                 <path d="M10 3.33203L8.82504 4.50703L13.475 9.16536H3.33337V10.832H13.475L8.82504 15.4904L10 16.6654L16.6667 9.9987L10 3.33203Z" fill="currentColor"/>
@@ -388,7 +391,378 @@
                 </clipPath>
               </defs>
             </svg>
-          </a>
+          </button>
+          </div>
+          <!-- STEP 2 - TEAM INFORMATION -->
+          <div class="content flex flex-grow flex-column justify-end display-none" id="step2">
+            <span class="bold-m">Team Information</span>
+            <div class="add-bar flex justify-between">
+              <span class="semibold-s">Add Employees to your Team</span>
+              <a href="#" class="flex semibold-s button-new"
+                >Add New
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="25"
+                  viewBox="0 0 24 25"
+                  fill="currentColor"
+                >
+                  <g clip-path="url(#clip0_20_813)">
+                    <path
+                      d="M13 8.5C13 6.29 11.21 4.5 9 4.5C6.79 4.5 5 6.29 5 8.5C5 10.71 6.79 12.5 9 12.5C11.21 12.5 13 10.71 13 8.5ZM11 8.5C11 9.6 10.1 10.5 9 10.5C7.9 10.5 7 9.6 7 8.5C7 7.4 7.9 6.5 9 6.5C10.1 6.5 11 7.4 11 8.5ZM1 18.5V20.5H17V18.5C17 15.84 11.67 14.5 9 14.5C6.33 14.5 1 15.84 1 18.5ZM3 18.5C3.2 17.79 6.3 16.5 9 16.5C11.69 16.5 14.78 17.78 15 18.5H3ZM20 15.5V12.5H23V10.5H20V7.5H18V10.5H15V12.5H18V15.5H20Z"
+                      fill="currentColor"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_20_813">
+                      <rect
+                        width="24"
+                        height="24"
+                        fill="currentColor"
+                        transform="translate(0 0.5)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </a>
+            </div>
+            <div
+              class="employees flex flex-row justify-start items-center flex-wrap"
+            >
+              <div class="employees-info flex flex-wrap">
+                <span>Tatiana Pinzón</span>
+                <span>Front-end Development</span>
+                <span>120 Hours</span>
+                <span>50 Euro</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <g clip-path="url(#clip0_20_948)">
+                    <path
+                      d="M6.175 7.16016L10 10.9768L13.825 7.16016L15 8.33516L10 13.3352L5 8.33516L6.175 7.16016Z"
+                      fill="currentColor"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_20_948">
+                      <rect width="20" height="20" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+              <a
+                href="#"
+                class="remove-employee flex justify-center items-center"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <g clip-path="url(#clip0_20_937)">
+                    <path
+                      d="M14 8C14 5.79 12.21 4 10 4C7.79 4 6 5.79 6 8C6 10.21 7.79 12 10 12C12.21 12 14 10.21 14 8ZM12 8C12 9.1 11.1 10 10 10C8.9 10 8 9.1 8 8C8 6.9 8.9 6 10 6C11.1 6 12 6.9 12 8Z"
+                      fill="currentColor"
+                    />
+                    <path
+                      d="M2 18V20H18V18C18 15.34 12.67 14 10 14C7.33 14 2 15.34 2 18ZM4 18C4.2 17.29 7.3 16 10 16C12.69 16 15.77 17.28 16 18H4Z"
+                      fill="currentColor"
+                    />
+                    <path d="M23 10H17V12H23V10Z" fill="currentColor" />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_20_937">
+                      <rect width="24" height="24" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </a>
+            </div>
+            <div
+              class="employees flex flex-row justify-start items-center flex-wrap"
+            >
+              <div class="employees-info flex flex-wrap">
+                <span>Tatiana Pinzón</span>
+                <span>Front-end Development</span>
+                <span>120 Hours</span>
+                <span>50 Euro</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <g clip-path="url(#clip0_20_948)">
+                    <path
+                      d="M6.175 7.16016L10 10.9768L13.825 7.16016L15 8.33516L10 13.3352L5 8.33516L6.175 7.16016Z"
+                      fill="currentColor"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_20_948">
+                      <rect width="20" height="20" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+              <a
+                href="#"
+                class="remove-employee flex justify-center items-center"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <g clip-path="url(#clip0_20_937)">
+                    <path
+                      d="M14 8C14 5.79 12.21 4 10 4C7.79 4 6 5.79 6 8C6 10.21 7.79 12 10 12C12.21 12 14 10.21 14 8ZM12 8C12 9.1 11.1 10 10 10C8.9 10 8 9.1 8 8C8 6.9 8.9 6 10 6C11.1 6 12 6.9 12 8Z"
+                      fill="currentColor"
+                    />
+                    <path
+                      d="M2 18V20H18V18C18 15.34 12.67 14 10 14C7.33 14 2 15.34 2 18ZM4 18C4.2 17.29 7.3 16 10 16C12.69 16 15.77 17.28 16 18H4Z"
+                      fill="currentColor"
+                    />
+                    <path d="M23 10H17V12H23V10Z" fill="currentColor" />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_20_937">
+                      <rect width="24" height="24" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </a>
+            </div>
+            <div
+              class="employees employees-info-selector flex flex-row justify-start items-center flex-wrap"
+            >
+              <div class="employees-info flex">
+                <span class="table-choose">Choose</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <g clip-path="url(#clip0_20_948)">
+                    <path
+                      d="M6.175 7.16016L10 10.9768L13.825 7.16016L15 8.33516L10 13.3352L5 8.33516L6.175 7.16016Z"
+                      fill="currentColor"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_20_948">
+                      <rect width="20" height="20" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+            <button class="button-next flex items-center" id="nextBtn2">Next
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <g clip-path="url(#clip0_88_400)">
+                  <path
+                    d="M10 3.33203L8.82504 4.50703L13.475 9.16536H3.33337V10.832H13.475L8.82504 15.4904L10 16.6654L16.6667 9.9987L10 3.33203Z"
+                    fill="currentColor"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_88_400">
+                    <rect width="20" height="20" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </button>
+          </div>
+          <!-- STEP 3 - COST CALCULATION -->
+          <div class="content flex flex-grow flex-column display-none" id="step3">
+            <span class="bold-m">Cost Calculation</span>
+            <div class="calculation-settings flex justify-between">
+              <div class="checkbox-import-fixed-costs flex">
+                <span class="semibold-s"
+                  >Import fixed costs from Main Profile</span
+                >
+                <label class="form-control">
+                  <input type="checkbox" name="checkbox" />
+                </label>
+              </div>
+              <a href="#" class="flex semibold-s button-new"
+                >Add New
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="25"
+                  viewBox="0 0 24 25"
+                  fill="currentColor"
+                >
+                  <g clip-path="url(#clip0_20_813)">
+                    <path
+                      d="M13 8.5C13 6.29 11.21 4.5 9 4.5C6.79 4.5 5 6.29 5 8.5C5 10.71 6.79 12.5 9 12.5C11.21 12.5 13 10.71 13 8.5ZM11 8.5C11 9.6 10.1 10.5 9 10.5C7.9 10.5 7 9.6 7 8.5C7 7.4 7.9 6.5 9 6.5C10.1 6.5 11 7.4 11 8.5ZM1 18.5V20.5H17V18.5C17 15.84 11.67 14.5 9 14.5C6.33 14.5 1 15.84 1 18.5ZM3 18.5C3.2 17.79 6.3 16.5 9 16.5C11.69 16.5 14.78 17.78 15 18.5H3ZM20 15.5V12.5H23V10.5H20V7.5H18V10.5H15V12.5H18V15.5H20Z"
+                      fill="currentColor"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_20_813">
+                      <rect
+                        width="24"
+                        height="24"
+                        fill="white"
+                        transform="translate(0 0.5)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </a>
+            </div>
+            <div class="checkbox-add-vat flex">
+              <span class="semibold-s">Add 19% Umsatzsteuer</span>
+              <label class="form-control">
+                <input type="checkbox" name="checkbox" />
+              </label>
+            </div>
+            <hr />
+            <div class="table-content flex flex-column items-end">
+              <div class="table-head bold-s">
+                <span>Name</span>
+                <span>Department</span>
+                <span>Time</span>
+                <span>Total</span>
+              </div>
+              <div class="employees-info">
+                <span>Tatiana Pinzón</span>
+                <span>Front-end Development</span>
+                <span>120 Hours</span>
+                <span>50 Euro</span>
+              </div>
+              <div class="employees-info">
+                <span>Leanne Winter</span>
+                <span>Web Designer</span>
+                <span>100 Hours</span>
+                <span>50 Euro</span>
+              </div>
+              <div class="employees-info">
+                <span>Antoine Hill</span>
+                <span>Marketing</span>
+                <span>50 Hours</span>
+                <span>50 Euro</span>
+              </div>
+              <div class="fixed-costs">
+                <span>General fixed Costs</span>
+                <span></span>
+                <span></span>
+                <span>1000 Euro</span>
+              </div>
+              <div class="costs-without-taxes semibold-s">
+                <span></span>
+                <span>4000 Euro</span>
+              </div>
+              <div class="vat bold-s">
+                <span>Ust. 19 %</span>
+                <span>760 Euro</span>
+              </div>
+              <div class="total-costs bold-s">
+                <span>Total</span>
+                <span>4760 Euro</span>
+              </div>
+            </div>
+            <button class="button-next flex items-center" id="nextBtn3">Next
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <g clip-path="url(#clip0_88_400)">
+                  <path
+                    d="M10 3.33203L8.82504 4.50703L13.475 9.16536H3.33337V10.832H13.475L8.82504 15.4904L10 16.6654L16.6667 9.9987L10 3.33203Z"
+                    fill="currentColor"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_88_400">
+                    <rect width="20" height="20" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </button>
+          </div>
+          <!-- STEP - DOWNLOAD OFFER -->
+          <div class="content flex flex-grow flex-column justify-end display-none" id="step4">
+            <div class="content-download flex flex-column">
+              <span class="bold-m">Download your Offer as a PDF</span>
+              <a href="#" class="flex semibold-s button-download"
+                >Download
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="21"
+                  viewBox="0 0 20 21"
+                  fill="currentColor"
+                >
+                  <g clip-path="url(#clip0_95_566)">
+                    <path
+                      d="M15.8332 8H12.4998V3H7.49984V8H4.1665L9.99984 13.8333L15.8332 8ZM9.1665 9.66667V4.66667H10.8332V9.66667H11.8082L9.99984 11.475L8.1915 9.66667H9.1665ZM4.1665 15.5H15.8332V17.1667H4.1665V15.5Z"
+                      fill="currentColor"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_95_566">
+                      <rect
+                        width="20"
+                        height="20"
+                        fill="currentColor"
+                        transform="translate(0 0.5)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </a>
+              <div class="checkbox-send-client flex">
+                <span class="semibold-s">Send Offer to Client?</span>
+                <label class="form-control">
+                  <input type="checkbox" name="checkbox" />
+                </label>
+              </div>
+              <button class="button-finish flex items-center">Finish
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                >
+                  <g clip-path="url(#clip0_125_450)">
+                    <path
+                      d="M9.99984 1.66797C5.39984 1.66797 1.6665 5.4013 1.6665 10.0013C1.6665 14.6013 5.39984 18.3346 9.99984 18.3346C14.5998 18.3346 18.3332 14.6013 18.3332 10.0013C18.3332 5.4013 14.5998 1.66797 9.99984 1.66797ZM9.99984 16.668C6.32484 16.668 3.33317 13.6763 3.33317 10.0013C3.33317 6.3263 6.32484 3.33464 9.99984 3.33464C13.6748 3.33464 16.6665 6.3263 16.6665 10.0013C16.6665 13.6763 13.6748 16.668 9.99984 16.668ZM13.8248 6.31797L8.33317 11.8096L6.17484 9.65964L4.99984 10.8346L8.33317 14.168L14.9998 7.5013L13.8248 6.31797Z"
+                      fill="currentColor"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_125_450">
+                      <rect width="20" height="20" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     <footer class="flex flex-wrap">

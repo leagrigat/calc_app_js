@@ -1,6 +1,7 @@
 import './main.css'
 import './employees/employees-list.css'
 import {addTeamMember} from './utilities'
+import {deleteTeamMember} from './utilities'
 
 // selecting the "Add new"-button and the modal (container coz everything is stored inside there)
 const addButton = document.querySelector('.button-new');
@@ -43,7 +44,8 @@ function formSubmit(event) {
         lastName,
         department,
         hoursWeek,
-        hourSalary
+        hourSalary,
+        id: crypto.randomUUID()
     }
 
     console.log(newTeamMember);
@@ -57,7 +59,7 @@ function formSubmit(event) {
 form.addEventListener('submit', formSubmit);
 
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-RENDERING TO DOM
+RENDERING TEAM MEMBER TO DOM
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
 // über unseren array loopen und html hinzufügen
@@ -77,11 +79,12 @@ function renderTeamMembers(){
         </div>
         <span></span>
     `
+    
     // array loop to render new team members
-    teamMembers.forEach((teamMember, index) => {
+    teamMembers.forEach((teamMember) => {  // teamMember ist item im Array (in unserem Fall object) - darüber iteriert forEach jedes Mal - deswegen Zugriff auf einzelne Elemente durch teamMember.firstName zB
 
         const newTeamMemberDiv = document.createElement('div');
-        newTeamMemberDiv.classList.add("table-row", "employees-info", `row${index + 1}`)
+        newTeamMemberDiv.classList.add("table-row", "employees-info")
         
         newTeamMemberDiv.innerHTML = `
         <span></span>
@@ -125,7 +128,10 @@ function renderTeamMembers(){
         teamListContainer.appendChild(deleteTeamMemberButton);
 
         // delete members from dom and local storage
-        //deleteTeamMemberButton.addEventListener('click' () =>)
+        deleteTeamMemberButton.addEventListener('click', () => {
+          deleteTeamMember(teamMember.id);
+          renderTeamMembers();
+        })
     });
 
 }

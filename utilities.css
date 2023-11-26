@@ -135,3 +135,12 @@
 .flex-grow-0 {
     flex-grow: 0;
 }
+
+/* DISPLAY */
+.display-none {
+    display: none;
+}
+
+.display-block {
+    display: block;
+}

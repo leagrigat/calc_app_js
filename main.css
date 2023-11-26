@@ -53,6 +53,11 @@ body {
   color: var(--clr-primary-900);
 }
 
+button {
+    outline: none;
+    border: none;
+}
+
 img,
 picture,
 svg {
