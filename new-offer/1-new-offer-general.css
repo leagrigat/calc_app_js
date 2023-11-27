@@ -56,9 +56,10 @@ PROGRESS BAR
     border-radius: 50%;
     width: 56px;
     height: 56px;
+    border: none;
 }
 
-.progress-bar .not-selected {
+.progress-bar .navbtn-default {
     background-color: #fff;
     border-radius: 50%;
     width: 56px;
@@ -66,7 +67,7 @@ PROGRESS BAR
     border: 1px solid var(--clr-primary-900);
 }
 
-.progress-bar .not-selected:hover {
+.progress-bar .navbtn-default:hover {
     background-color: var(--clr-primary-100);
     border-radius: 50%;
     width: 56px;

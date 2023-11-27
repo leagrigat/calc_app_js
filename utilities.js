@@ -9,14 +9,23 @@ export function addTeamMember(teamMember) {
     const teamMemberArrayString = localStorage.getItem('teamMember'); // get item only needs one argument - will show me what's stored under the given key
     const teamMemberArray = JSON.parse(teamMemberArrayString); // string converted to array
     // teamMemberArray = JSON.parse(localStorage.getItem('teamMember')) - short way to get array and directly parse it
-    console.log(teamMemberArrayString);
+    // console.log(teamMemberArrayString);
 
     teamMemberArray.push(teamMember); // pushed new team member into array
 
     const newTeamMemberArrayString = JSON.stringify(teamMemberArray);
-    console.log(newTeamMemberArrayString);
+    // console.log(newTeamMemberArrayString);
 
     localStorage.setItem('teamMember', newTeamMemberArrayString); // every function call adds a new object to the existing array
+}
+
+// addProject function
+
+export function addProject(project) {
+    const projectArray = JSON.parse(localStorage.getItem(project));
+    projectArray.push(project);
+
+    localStorage.setItem('project', JSON.stringify(projectArray));
 }
 
 /* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -31,7 +40,6 @@ export function deleteTeamMember(id) {
     })
     localStorage.setItem('teamMember', JSON.stringify(lessTeamMembers));
 };
-
 
 
 /*

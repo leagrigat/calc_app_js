@@ -12,7 +12,7 @@ addButton.addEventListener('click', () => {
     modal.style.display = 'flex';
 })
 
-/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 SUBMITTING FORM
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
@@ -66,7 +66,8 @@ RENDERING TEAM MEMBER TO DOM
 function renderTeamMembers(){
     // array aus local storage holen
     const teamMembers = JSON.parse(localStorage.getItem('teamMember'));
-
+    
+    // selecting the right html class
     const teamListContainer = document.querySelector('.table-content');
    
     // container leer machen, header beibehalten
@@ -96,6 +97,7 @@ function renderTeamMembers(){
         
         teamListContainer.appendChild(newTeamMemberDiv);
 
+        // create delete buttons
         const deleteTeamMemberButton = document.createElement('button');
         deleteTeamMemberButton.classList.add("remove-employee", "flex", "justify-center", "items-center")
 
