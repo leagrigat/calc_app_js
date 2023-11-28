@@ -1,4 +1,4 @@
-/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 STORING DATA IN LOCAL STORAGE
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
@@ -28,14 +28,14 @@ export function addProject(project) {
     localStorage.setItem('project', JSON.stringify(projectArray));
 }
 
-/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 DELETE TEAM MEMEBER FROM STORAGE AND DOM
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
 export function deleteTeamMember(id) {
     const teamMembers = JSON.parse(localStorage.getItem('teamMember'));
     const lessTeamMembers = teamMembers.filter((teamMember) => {
-        return id !== teamMember.id  /* wenn die id NICHT mit der teamMember.id übereinstimmt, bekommen wir true raus -> item bleibt im array
+        return id !== teamMember.id  /* wenn die generierte id NICHT mit der teamMember.id übereinstimmt, bekommen wir true raus -> item bleibt im array
         andernfalls (also id und teamMember.id sind gleich, erhalten wir false (weil wir auf Ungleichheit checken) und das item wird rausgefiltert) */
     })
     localStorage.setItem('teamMember', JSON.stringify(lessTeamMembers));
